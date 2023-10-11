@@ -99,7 +99,7 @@ function App() {
   }
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "100vh", width: "100%" }}>
       {/* {console.log(process.env.REACT_APP_MAPBOX)} */}
       <ReactMapGL
         {...viewport}
@@ -219,10 +219,14 @@ function App() {
         { console.log(loginData)}
         {
          
-        loginData[0]?.username ? (
-          <button className="button logout" onClick={handleLogout}>
+        loginData[0]?.username ? (<>
+        <span className="user-ogout">{loginData[0].username}</span>
+         <button className="button logout" onClick={handleLogout}>
             Log out
           </button>
+        
+        </>
+         
         ) : (
           <div className="buttons">
             <button className="button login" onClick={() => setShowLogin(true)}>
