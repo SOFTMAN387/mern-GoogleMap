@@ -3,7 +3,9 @@ fronted/node_modules
 fronted/.env
 fronted/build
 fronted/dist
-
+/build
+dist
+build
 /node_modules
 backend/node_modules
 node_modules
