@@ -5,6 +5,7 @@ fronted/build
 fronted/dist
 
 /node_modules
+backend/node_modules
 node_modules
 
 backend/.env
