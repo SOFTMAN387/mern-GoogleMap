@@ -109,13 +109,13 @@ function App() {
         width="100%"
         height="100%"
         transitionDuration="200"
-        mapStyle="mapbox://styles/softman/clniln1ca00bm01o06u066scx"
+        // mapStyle="mapbox://styles/softman/clniln1ca00bm01o06u066scx"
         onViewportChange={(viewport) => setViewport(viewport)}
         onDblClick={loginData[0]?.username && handleAddClick}
       >
      
-        {console.log(pins)}
-        {pins?.map((p,index) => (
+        {/* {console.log(pins)} */}
+        {pins.map((p,index) => (
           <>
             <Marker
               latitude={p.lat}
@@ -218,7 +218,7 @@ function App() {
             </Popup>
           </>
         )}
-        { console.log(loginData)}
+        {/* { console.log(loginData)} */}
         {
          
         loginData[0]?.username ? (<>
