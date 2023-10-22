@@ -99,7 +99,7 @@ function App() {
   }
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div style={{ height: "50vh", width: "100%" }}>
       {/* {console.log(process.env.REACT_APP_MAPBOX)} */}
       <ReactMapGL
         {...viewport}
@@ -113,7 +113,7 @@ function App() {
       >
      
         {console.log(pins)}
-        {pins?.map((p) => (
+        {pins?.map((p,index) => (
           <>
             <Marker
               latitude={p.lat}
@@ -133,7 +133,7 @@ function App() {
             </Marker>
             {p._id === currentPlaceId && (
               <Popup
-                key={p._id}
+                key={index}
                 latitude={p.lat}
                 longitude={p.long}
                 closeButton={true}
