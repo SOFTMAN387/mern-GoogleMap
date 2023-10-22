@@ -8,10 +8,12 @@ import { useDispatch,useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "timeago.js";
 import Register from "./components/Register";
+import 'mapbox-gl/dist/mapbox-gl.css';
 import Login from "./components/Login";
 
 function App() {
     const loginData = useSelector((state) => state.currentUser) || [];
+    
   const dispatch=useDispatch();
   // const myStorage = window.localStorage;
   // const [currentUsername, setCurrentUsername] = useState(JSON.parse(myStorage.getItem("user")));
@@ -99,7 +101,7 @@ function App() {
   }
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "100vh", width: "100%" }}>
       {/* {console.log(process.env.REACT_APP_MAPBOX)} */}
       <ReactMapGL
         {...viewport}
