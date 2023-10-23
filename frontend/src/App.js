@@ -24,6 +24,7 @@ function App() {
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [star, setStar] = useState(0);
+
   const [viewport, setViewport] = useState({
     latitude:  25.612677,
     longitude: 85.158875,
@@ -114,9 +115,11 @@ function App() {
         onDblClick={loginData[0]?.username && handleAddClick}
       >
      
-        {/* {console.log(pins)} */}
-        {pins.map((p,index) => (
-          <>
+     {console.log(pins)}
+    
+        {pins && pins?.map((p,index) => {
+          return(
+            <>
             <Marker
               latitude={p.lat}
               longitude={p.long}
@@ -164,7 +167,9 @@ function App() {
               </Popup>
             )}
           </>
-        ))}
+          )
+        
+          })}
         {newPlace && (
           <>
             <Marker
