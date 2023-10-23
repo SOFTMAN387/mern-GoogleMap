@@ -115,7 +115,8 @@ function App() {
         onDblClick={loginData[0]?.username && handleAddClick}
       >
      
-     {console.log(pins)}
+     {/* {console.log(pins)} */}
+     
     
         {pins && pins?.map((p,index) => {
           return(
