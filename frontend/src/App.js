@@ -74,7 +74,7 @@ function App() {
         // const currUserId=JSON.parse(currUser);
         // console.log(currUserId._id)
         const allPins = await axios.get(`api/pins/${loginData[0]?._id}`);
-        setPins(allPins.data.data);
+        setPins(allPins.data);
       } catch (err) {
         console.log(err);
       }
