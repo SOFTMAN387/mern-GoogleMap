@@ -19,7 +19,7 @@ export default function Login({ setShowLogin }) {
       password: passwordRef.current.value,
     };
     try {
-      const res = await axios.post("/users/login", user);
+      const res = await axios.post("api/users/login", user);
       console.log(res);
       // setCurrentUsername(res.data.username);
       dispatch(actions.loginUser([res.data]));

@@ -59,7 +59,7 @@ function App() {
     };
 
     try {
-      const res = await axios.post("/pins", newPin);
+      const res = await axios.post("/api/pins", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
@@ -73,7 +73,7 @@ function App() {
         // const currUser=localStorage.getItem("user");
         // const currUserId=JSON.parse(currUser);
         // console.log(currUserId._id)
-        const allPins = await axios.get(`/pins/${loginData[0]?._id}`);
+        const allPins = await axios.get(`api/pins/${loginData[0]?._id}`);
         setPins(allPins.data.data);
       } catch (err) {
         console.log(err);
@@ -91,7 +91,7 @@ function App() {
   const handleDelPin=async(id)=>{
     try {
       // console.log(id);
-      const delPin=await axios.delete(`/pins/${id}`);
+      const delPin=await axios.delete(`api/pins/${id}`);
       if(delPin){
         alert("pin deleted successfully !...")
       }

@@ -7,7 +7,7 @@ import pinRoute from "./routes/pins.js"
 import path from "path";
 
 dotenv.config();
-const port=5000;
+const port=8000;
 const app = express();
 
 
