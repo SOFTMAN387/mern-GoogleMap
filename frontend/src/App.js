@@ -74,7 +74,7 @@ function App() {
         // const currUserId=JSON.parse(currUser);
         // console.log(currUserId._id)
         const allPins = await axios.get(`/pins/${loginData[0]?._id}`);
-        setPins(allPins.data);
+        setPins(allPins.data.data);
       } catch (err) {
         console.log(err);
       }
@@ -117,8 +117,8 @@ function App() {
      
      {/* {console.log(pins)} */}
 
-    
-        { pins?.map((p,index) => {
+      {/* {console.log(pins)} */}
+        { pins && pins.map && pins.map((p,index) => {
           return(
             <>
             <Marker
