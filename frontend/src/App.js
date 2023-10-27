@@ -60,6 +60,7 @@ function App() {
 
     try {
       const res = await axios.post("/api/pins", newPin);
+      // console.log(res);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
@@ -69,10 +70,7 @@ function App() {
 
   useEffect(() => {
     const getPins = async () => {
-      try {
-        // const currUser=localStorage.getItem("user");
-        // const currUserId=JSON.parse(currUser);
-        // console.log(currUserId._id)
+      try { 
         const allPins = await axios.get(`api/pins/${loginData[0]?._id}`);
         setPins(allPins.data);
       } catch (err) {
@@ -82,10 +80,11 @@ function App() {
     getPins();
   }, [loginData]);
 
+
+  
   const handleLogout = () => {
-    // setCurrentUsername(null);
     dispatch(actions.logoutUser());
-    // myStorage.removeItem("user");
+    setPins([]);
   };
 
   const handleDelPin=async(id)=>{
@@ -121,6 +120,7 @@ function App() {
         { pins && pins.map && pins.map((p,index) => {
           return(
             <>
+            {/* {console.log(p)} */}
             <Marker
               latitude={p.lat}
               longitude={p.long}
